@@ -1,10 +1,11 @@
 def process_input():
     with open("input.txt") as f:
         entries = f.read().splitlines()
+        games = []
         for i in range(len(entries)):
             record = entries[i].split(":")[1]
-            entries[i] = record.split(";")
-        return entries
+            games.append(record.split(";"))
+        return games
 
 
 def solve():
