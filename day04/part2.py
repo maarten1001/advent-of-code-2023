@@ -1,6 +1,7 @@
 def process_input():
     with open("input.txt") as f:
         entries = f.read().splitlines()
+        cards = []
         for i in range(len(entries)):
             numbers = entries[i].split(":")[1]
             numbers = numbers.split("|")
@@ -9,8 +10,8 @@ def process_input():
                 "winning_numbers": set(numbers[0].split()),
                 "numbers_you_have": set(numbers[1].split())
             }
-            entries[i] = card
-        return entries
+            cards.append(card)
+        return cards
 
 
 def solve():
