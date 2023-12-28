@@ -29,14 +29,11 @@ def mapper(m, source):
 
 
 def solve():
-    lowest_location = float("inf")
     seeds, maps = process_input()
-    for seed in seeds:
+    for i in range(len(seeds)):
         for k, v in maps.items():
-            seed = mapper(v, seed)
-        if seed < lowest_location:
-            lowest_location = seed
-    print(lowest_location)
+            seeds[i] = mapper(v, seeds[i])
+    print(min(seeds))
 
 
 if __name__ == "__main__":
